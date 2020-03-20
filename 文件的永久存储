@@ -1,0 +1,15 @@
+# Python提供了一个专用模块pickle
+# 该模块中的两种方法可被用来存取内容
+# dump方法dump（被存储的文件名，新建文件名）
+# eg:永久存储一个列表(以文件形式保存)
+import pickle
+my_list = [123,121,'赵帅博'['python学习']]
+pickle_file = open('my_list.pkl','wb')
+pickle.dump(my_list,pickle_file)
+pickle_file.close()
+
+# eg:
+# 将保存的列表内容取出
+pickle_file = open("my_list.pkl",'rb')
+my_list2 = pickle.load(pickle_file)
+print(my_list2)
