@@ -20,3 +20,21 @@ def func_two(): #第5题
     for i in aList:                           # 遍历字符串aList，并将内容添加到列表bList中
         bList.append(int(i))
     print(bList[x:y+1])
+def func_three():# 第九题
+    d = {'name':'zhao','age':21,'sex':'male','address':'Xuchang'}
+    i = input('请输入您需要查看的值所对应的键:')
+    if i in d.keys():
+        print(d.get(i))
+    else:
+        print('您输入的键不存在')
+def func_four(): # 第十题
+    x = [random.randint(0,100) for i in range(20)] # 生成20个随机数
+    a = int(len(x)/2)                   # 计算长度
+    f = x[0:a]                      # 截取前十个元素
+    l = x[a:]                       # 截取后十个元素
+    f.sort()                        # 前十个顺序排列
+    l.sort(reverse=True)            # 后十个逆序排列
+    f.extend(l)                     # 合并成一个数列
+    print(f)                        # 打印
+def func_five(): # 第13题
+    
