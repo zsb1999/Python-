@@ -1,11 +1,11 @@
-# Chapter 1
+# Chapter 1 基础知识
 import random
 def func_1():
     num = int(input('请输入一个三位以上的整数：'))
     num_1 = (num //10) //10                             # 获取百位以上的数
     print(num_1)
     
-# Chapter 2
+# Chapter 2 Python序列
 def func_one(): #第3题
     x = [random.randint(0,100) for i in range(1000)]    # 利用生成器推导式，随机生成1000个范围为0-100的整数
     d = {}
@@ -41,7 +41,7 @@ def func_four(): # 第10题
     print(f)                        # 打印
 
 
-# Chapter 3
+# Chapter 3 选择与循环
 def func_five(): # 第2题
     year = int(input('Please Input Four Integer:')) # 获取用户数据
     if (year%400 ==0) or (year%4==0 and year%100!=0): # 判断是否符合闰年条件
@@ -134,3 +134,39 @@ def func_nine_2():# 方法2
     elif x>=20:                    # 当x>=20时,y=0
         y = 0
         print(y)
+# Chapter 4 字符串与正则表达式
+# Chapter 5 函数设计与使用
+
+
+ def get_sushu(): # 第2题
+    n = int(input('请输入一个整数'))
+    for i in range(2,n):
+        if n%i !=0:
+            print('{}是素数'.format(n))
+        else:
+            print('{}不是素数'.format(n))
+
+def func(): # 第3题
+    digit = 0
+    big = 0
+    small = 0
+    el = 0
+    aStr = input('请输入一串字符：')
+    for i in aStr:
+        if i.isdigit():
+            digit += 1
+        elif 'a'<= i <='z':
+            small += 1
+        elif 'A'<= i <= 'Z':
+            big += 1
+        else:
+            el += 1
+    print('数字个数为%d，大写%d，小写%d，其他%d'%(digit,big,small,el))
+    
+    def func(): # 第9题
+    sum = 0
+    x = input('请输入一串数字：')
+    max1 = max(x)
+    for i in x:
+        sum += int(i)
+    print('最大值为%d，总和为%d'%(int(max1),sum))
