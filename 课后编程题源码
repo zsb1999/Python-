@@ -170,3 +170,41 @@ def func(): # 第3题
     for i in x:
         sum += int(i)
     print('最大值为%d，总和为%d'%(int(max1),sum))
+
+
+
+# Chapter 6 面向对象程序设计
+
+class Person:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+    def speak(self):
+        print('我叫%s，今年%s岁'%(self.name,self.age))
+
+# shubiao = Person('赵帅博',21)
+# shubiao.speak()
+
+class Student(Person):
+
+    def __init__(self,name,age,grade,school):
+        Person.__init__(self,name,age)
+        self.grade = grade
+        self.school = school
+
+    def speak(self):
+        print('我叫%s，今年%s岁，我在%s读%s'%(self.name,self.age,self.school,self.grade))
+
+# s = Student('zhao',21,'商丘学院','大一')
+# s.speak()
+# print(isinstance(s,Student))
+class Speaker(Student,Person):
+    def __init__(self,name,age,grade,school,title):
+        Person.__init__(self,name,age)
+        Student.__init__(self,name,age,grade,school)
+        self.title = title
+    def speak(self):
+        print('我叫%s，今年%s岁，我在%s读%s,我今天演讲的题目是%s'%(self.name,self.age,self.school,self.grade,self.title))
+
+s= Speaker('赵帅博',21,'SQU','大一','Python')
+s.speak()
