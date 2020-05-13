@@ -1,0 +1,94 @@
+def Switch_2_10():
+    '''二进制转化为十进制'''
+    number = input("请输入您需要转换的二进制数：")
+    if number.count(".") == 0:
+        sum = 0
+        mi = len(number)
+        for i in number:
+            if int(i) == 0 or int(i) == 1:
+                sum_1 = int(i) * 2**(mi-1)
+                sum += sum_1
+                mi -= 1
+            else:
+                print('您的输入内容有误！')
+                break    
+        print(sum)
+    elif number.count(".") == 1:
+        #if n.count('.') == 1:
+        n_index = number.index('.')
+        left_n = number[0:n_index]
+        right_n = number[n_index+1::]
+        sum_left = 0
+        sum_right = 0
+        mi_left = len(left_n)
+        mi_right = 1
+        for i in left_n:
+            if int(i) == 0 or int(i) == 1:
+                sum_left += int(i) * 2**(mi_left - 1)
+                mi_left -= 1
+        for j in right_n:
+            if int(j) == 0 or int(j) == 1:
+                sum_right += int(j) * 2** (-(mi_right))
+                mi_right += 1
+        sum = sum_right + sum_left
+        print(sum_left,sum_right)
+        print(sum)
+
+def Switch_2_16():
+    '''二进制转化为十六进制'''
+    pass
+
+
+def Switch_10_2():
+    '''十进制转化为二进制'''
+    pass
+
+
+def Switch_10_16():
+    '''十进制转化为十六进制'''
+    pass
+
+
+def Switch_16_2():
+    '''十六进制转化为二进制'''
+    pass
+
+
+def Switch_16_10():
+    '''十六进制转化为十进制'''
+    pass
+
+
+
+def program_run():
+    '''程序主函数'''
+    print("*"*5+"欢迎使用小鼠标进制转化工具"+"*"*5)
+    #print("请输入如下功能对应的序号：")
+    print(" ")
+    print("*"*23)
+    print("1.二进制转化为十进制")
+    print("2.二进制转化为十六进制")
+    print("3.十进制转化为二进制")
+    print("4.十进制转化为十六进制")
+    print("5.十六进制转化为二进制")
+    print("6.十六进制转化为十进制")
+    print("*"*23)
+    user_decision = input("请输入以上功能对应的序号：")
+    if user_decision == "1":
+        Switch_2_10()
+    elif user_decision == "2":
+        pass
+    elif user_decision == "3":
+        pass
+    elif user_decision == "4":
+        pass
+    elif user_decision == "5":
+        pass
+    elif user_decision == "6":
+        pass
+    else:
+        print("您的输入有误，请重新输入！")
+        program_run()
+
+if __name__ == "__main__":
+    program_run()
